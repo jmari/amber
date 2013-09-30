@@ -268,7 +268,7 @@ protocolsDo: aBlock
 		(methodsByCategory at: m category ifAbsentPut: [Array new])
 			add: m].
 	self protocols do: [:category |
-		aBlock value: category value: (methodsByCategory at: category)]
+		aBlock value: category value: (methodsByCategory at: category ifAbsent:[Array new])]
 ! !
 
 !Behavior methodsFor: 'instance creation'!
